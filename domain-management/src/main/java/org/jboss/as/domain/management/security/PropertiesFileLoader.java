@@ -100,7 +100,9 @@ public class PropertiesFileLoader {
      *
      * Note: Possessive quantifiers are used here as without them invalid test strings become a serious performance burden.
      */
-    public static final Pattern PROPERTY_PATTERN = Pattern.compile("#?+((?:[,.\\-@/a-zA-Z0-9]++|(?:\\\\[=\\\\])++)++)=(.*+)");
+    public static final Pattern PROPERTY_PATTERN_ORIGINAL = Pattern.compile("#?+((?:[,.\\-@/a-zA-Z0-9]++|(?:\\\\[=\\\\])++)++)=(.++)");
+    public static final Pattern PROPERTY_PATTERN_NEW = Pattern.compile("#?+((?:[,.\\-@/a-zA-Z0-9]++|(?:\\\\[=\\\\])++)++)=(.*+)");
+    public static final Pattern PROPERTY_PATTERN = PROPERTY_PATTERN_NEW;
     public static final String DISABLE_SUFFIX_KEY = "!disable";
 
     private final InjectedValue<PathManager> pathManager = new InjectedValue<PathManager>();
